@@ -45,7 +45,7 @@ https://www.cobaltstrike.com/support
 4. Legal
    -----
 
-Cobalt Strike (c) 2012-2020 Strategic Cyber LLC, a HelpSystems company
+Cobalt Strike (c) 2012-2020 Strategic Cyber LLC
 
 Cobalt Strike is proprietary software. You must purchase a license to use it
 or use it for the granted trial period only. Use of Cobalt Strike constitutes
@@ -120,9 +120,6 @@ http://www.exploit-monday.com/2012/05/accessing-native-windows-api-in.html
 
 Reflective DLL Injection - (c) 2011, Stephen Fewer of Harmony Security (BSD License)
 https://github.com/stephenfewer/ReflectiveDLLInjection
-
-Sleep 2.1 - (c) 2002-2020 Raphael Mudge (BSD License)
-http://sleep.dashnine.org
 
 Synthetica Look and Feel - (c) Jyloo Software (Commercial License to Strategic Cyber LLC)
 http://www.jyloo.com/synthetica/

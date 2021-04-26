@@ -27,12 +27,11 @@ echo -e "\033[1;33m   \ \  /\  / /  | |  __  | |__) | | (___     ___    ___  \03
 echo -e "\033[1;34m    \ \/  \/ /   | | |_ | |  ___/   \___ \   / _ \  / __| \033[0m"
 echo -e "\033[1;35m     \  /\  /    | |__| | | |       ____) | |  __/ | (__  \033[0m"
 echo -e "\033[1;36m      \/  \/      \_____| |_|      |_____/   \___|  \___|  \n\033[0m"
-echo -e "\033[1;31m\tThank's 北美第一突破手 && WgpSec \n\033[0m"
-echo -e "\033[1;32m\t[ help ] \n\033[0m"
-echo -e "\033[1;35m\t[ https://github.com/wgpsec ] \033[0m"
-echo -e "\033[1;34m\t[ https://mp.weixin.qq.com/s/6nBrRJHFFpCw4N90n8aURA ] \033[0m"
-echo -e "\033[1;33m\t[ https://blog.zygd.site/CobaltStrike%204.2%20Cloud%20function%20and%20Docker.html ] \n\033[0m"
-
+echo -e "\033[1;31m Thank's 北美第一突破手 && WgpSec \n\033[0m"
+echo -e "\033[1;32m [ help ] \n\033[0m"
+echo -e "\033[1;35m [ https://github.com/wgpsec ] \033[0m"
+echo -e "\033[1;34m [ https://mp.weixin.qq.com/s/6nBrRJHFFpCw4N90n8aURA ] \033[0m"
+echo -e "\033[1;33m [ https://blog.zygd.site/CobaltStrike4.3%20Docker%20with%20Mac.html ] \n\033[0m"
 
 
 #################
@@ -79,15 +78,15 @@ fi
         # -Djavax.net.ssl.keyStorePassword="password" to java. This is used for setting up
         # an SSL server socket. Also, the SHA-1 digest of the first certificate in the store
         # is printed so users may have a chance to verify they're not being owned.
-if [ -e /CobaltStrike/cobaltstrike.store ]; then
+if [ -e /cobaltstrike/cobaltstrike.store ]; then
         print_info "Will use existing X509 certificate and keystore (for SSL)"
 else
         print_info "Generating X509 certificate and keystore (for SSL)"
         IFS_BACKUP=$IFS
         IFS=$(echo -en "\n\b")
-        keytool -keystore /CobaltStrike/cobaltstrike.store -storepass $passwd -keypass $passwd -genkey -keyalg RSA -alias "$aliasname" -dname "$dname"
+        keytool -keystore /cobaltstrike/cobaltstrike.store -storepass $passwd -keypass $passwd -genkey -keyalg RSA -alias "$aliasname" -dname "$dname"
         IFS=$IFS_BACKUP
 fi
 # start the team server.
-java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=$server_port -Djavax.net.ssl.keyStore=/CobaltStrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -classpath /CobaltStrike/CobaltStrike.jar server.TeamServer $server_ip $passwd
+java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=$server_port -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:/cobaltstrike/hook.jar -classpath /cobaltstrike/cobaltstrike.jar server.TeamServer $server_ip $passwd 
 
