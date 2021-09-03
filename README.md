@@ -1,93 +1,108 @@
-# CobaltStrike4.3 Docker with Mac
+# CobaltStrike Update
 
+## Introduce
 
+[Thanks](#Thanks) 
 
-![image-20210419004608801](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210423002501041137.png?w=1280&fmt=jpg)
+> Cobatstrike is a platform wide multi-party cooperative post penetration attack framework based on Java. Cobaltstrike integrates the functions of port forwarding, port scanning, socket proxy, lifting rights, fishing, remote control Trojan horse and so on. The tool covers almost all the technical links needed in the apt attack chain.
+> Use cloud functions to avoid traceability
+> Using docker container is fast and convenient
+> Use the python script I wrote to avoid privacy disclosure and malicious attacks
 
-![image-20210419004622339](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210423002505946016.png?w=1280&fmt=jpg)
+## Quickly create
 
-## Make
-
-Amd64
+> If you want to use cloud functions, you must use port 443 inside the container
 
 ```bash
 docker run -it \
-	--name cs \
-	-e passwd="e9PrFYtrPFD2U" \
-	-e server_ip="192.168.1.88" \
-	-e server_port=33002 \
-	-e aliasname="Bing Wallpaper" \
-	-e dname="CN=www.microsoft.com,  OU=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=WA, C=US" \
-	-p 33002:33002 \
-	-p 443:443 \
-	-p 80:80 \
-	-p 33002:33002/udp \
-	-p 443:443/udp \
-	-p 80:80/udp \
-	registry.cn-hangzhou.aliyuncs.com/xrsec/cobaltstrike:4.3
+   --name cs \
+   -e "passwd=e9PrFYtrPFD2U" \
+   -e "server_ip=1.1.1.1" \
+   -e "server_port=33009" \
+   -e "dname=CN=www.microsoft.com,  OU=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=WA, C=US" \
+   -p 443:443 \
+   -p 443:443/udp \
+   -p 80:80 \
+   -p 33009:33009 \
+   -p 33009:33009/udp \
+   xrsec/cobaltstrike:4.4
+   
+# "tips server_ip=192.168.0.1" | "tips server_ip=86.66.66.66"
+# -p 80:80 : http
+# -p 443:443 : https
+# -p 33009:33009 : admin
+# -e "passwd=e9PrFYtrPFD2U" : your password
 ```
 
 
 
-```bash
-docker run -it \
-	--name cs \
-	-e passwd="e9PrFYtrPFD2U" \
-	-e server_ip="192.168.1.88" \
-	-e server_port=33002 \
-	-e aliasname="Bing Wallpaper" \
-	-e dname="CN=www.microsoft.com,  OU=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=WA, C=US" \
-	-p 33002:33002 \
-	-p 443:443 \
-	-p 80:80 \
-	-p 33002:33002/udp \
-	-p 443:443/udp \
-	-p 80:80/udp \
-	registry.cn-hangzhou.aliyuncs.com/xrsec/cobaltstrike:Arm-4.3
-```
+### Preview
 
+![image-20210903211149434](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210903213218094679.png?w=1280&fmt=jpg)
 
+![image-20210903211214909](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210903213224154378.png?w=1280&fmt=jpg)
 
-## Tree
+### Tree
+
+[MD5](#MD5) 如果需要自行编译请准备好
 
 ```ini
-➜  cs server tree   
+➜  cobaltstrike.server tree
 .
 ├── Dockerfile
-└── cobaltstrike
-    ├── Java\ SE\ -\ Downloads\ _\ Oracle\ Technology\ Network\ _\ Oracle.html.mht
-    ├── cobaltstrike.auth
-    ├── cobaltstrike.jar
-    ├── hook.jar
-    ├── icon.jpg
-    ├── license.pdf
-    ├── readme.txt
-    ├── teamserver
-    └── third-party
-        ├── README.winvnc.txt
-        ├── winvnc.x64.dll
-        └── winvnc.x86.dll
+├── agscript.sh
+├── build.log
+├── c2lint.sh
+├── cobaltstrike
+├── cobaltstrike.jar
+├── cs.profile
+├── dingding.cna
+├── jdk-16.0.2_linux-x64_bin.rpm?AuthParam=1630672044_704ffd18a70f3d1b46ccb8e27452e567
+├── license.pdf
+├── peclone.sh
+├── teamserver
+├── third-party
+│   ├── README.winvnc.txt
+│   ├── winvnc.x64.dll
+│   └── winvnc.x86.dll
+├── update.jar
+├── zer0daylab.txt
+└── zerodaylab.us.url
 
-2 directories, 12 files
+1 directory, 18 files
 ```
 
-## Md5
+
+### MD5
 
 ```ini
-# Arm
-814eea186ff7b7d54c57924489ea78e9  cobaltstrike.auth
-32cd41edf0810c5b5f498edf4731cc6d  cobaltstrike.jar
-cd3c6d07bf1002a46fb2420369298c7b  hook.jar
-3e0f7384cd692f647fc143d41c6c2d7c  icon.jpg
-601cc3e186bd6e18b06c8a807d530b47  license.pdf
-d4bf6bc69c744b4d4d550c1cedfc06f2  readme.txt
-d376f709eae6977b22a71ce5e3fed3a0  teamserver
-a51c46331ab7e9cd2ab9f35eb7f94a2f  Java SE - Downloads _ Oracle Technology Network _ Oracle.html.mht
-ce44456545c3f6695f017eeca535bc0d  README.winvnc.txt
-bc9fd6c5621c3fa5a16489db19746112  winvnc.x64.dll
-719a93419dd5123b52961a076d283f21  winvnc.x86.dll
-79d7ce73e8a4d2dd6ad4579b82b3db15  Dockerfile
+MD5 (Dockerfile) = d6ea95541f3d83d966415d7be92cf6a2
+MD5 (agscript.sh) = ac9308c56cf48012695ec52f990462c6
+MD5 (build.log) = d41d8cd98f00b204e9800998ecf8427e
+MD5 (c2lint.sh) = 63ce20f4ee0a8cb174ccd9c18b973ffa
+MD5 (cobaltstrike) = 6cb0e504f022153da5a3600d747ae50e
+MD5 (cobaltstrike.jar) = de21e4fc85c688c6e84b36adbb1b7ef1
+MD5 (cs.profile) = 33c5dae3d3aa6559b8674167e8cd538a
+MD5 (dingding.cna) = 7f29a0628cea4064a9c5e7fb024f961e
+MD5 (license.pdf) = 3bf4b1c7be0a273cb631e7611f3078d8
+MD5 (peclone.sh) = 91aacf2ded132846e64d100b0efb1082
+MD5 (teamserver) = 4c693c502844613926629205312c93fa
+md5: third-party: Is a directory
+MD5 (update.jar) = fc2a7eaf59a926790946a8ec8c2e7a92
+MD5 (zer0daylab.txt) = 14391ede14cccd0a26358772a7ff885b
+MD5 (zerodaylab.us.url) = 953a2d568bfbe1a55216e572d582efd3
 ```
 
-[blog](https://blog.zygd.site/CobaltStrike4.3%20Docker%20with%20Mac.html)
+## Thanks 
 
+[ZER0DAY LAB](https://zerodaylab.us/)
+
+> 注：如认为本破解补丁存在某些后门或转载删版权者，请勿使用！
+>
+> 由于传播、利用此文所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，文章作者不为此承担任何责任。
+>
+> XRSec 拥有对此文章的修改和解释权如欲转载或传播此文章，必须保证此文章的完整性，包括版权声明等全部内容。未经作者允许，不得任意修改或者增减此文章内容，不得以任何方式将其用于商业目的
+>
+> Note: if you think that there are some backdoors in this crack patch or those who reprint or delete the copyright, please do not use it!
+> Any direct or indirect consequences and losses caused by the dissemination and use of the information provided in this article shall be borne by the user himself, and the author of the article shall not bear any responsibility for this.
+> Xrsec has the right to modify and interpret this article. If you want to reprint or disseminate this article, you must ensure the integrity of this article, including all contents such as copyright notice. Without the permission of the author, the content of this article shall not be modified or increased or decreased arbitrarily, and it shall not be used for commercial purposes in any way
