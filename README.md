@@ -1,8 +1,6 @@
-# [CobaltStrike Update](https://blog.zygd.site/%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%AB%98%20%E5%88%86%E6%9E%90%E5%BB%BA%E8%AE%AE.html)
+# [CobaltStrike Update](https://github.com/xrsec/Docker-CobaltStrike)
 
 ## Introduce
-
-[Thanks](#Thanks) 
 
 > Cobatstrike is a platform wide multi-party cooperative post penetration attack framework based on Java. Cobaltstrike integrates the functions of port forwarding, port scanning, socket proxy, lifting rights, fishing, remote control Trojan horse and so on. The tool covers almost all the technical links needed in the apt attack chain.
 > Use cloud functions to avoid traceability
@@ -44,8 +42,6 @@ docker run -it \
 
 ### Tree
 
-[MD5](#MD5) 如果需要自行编译请准备好
-
 ```ini
 ➜  cobaltstrike.server tree
 .
@@ -72,7 +68,6 @@ docker run -it \
 1 directory, 18 files
 ```
 
-
 ### MD5
 
 ```ini
@@ -93,16 +88,14 @@ MD5 (zer0daylab.txt) = 14391ede14cccd0a26358772a7ff885b
 MD5 (zerodaylab.us.url) = 953a2d568bfbe1a55216e572d582efd3
 ```
 
+Github : https://github.com/xrsec/Docker-CobaltStrike
+
+Hub.docker : https://hub.docker.com/r/xrsec/cobaltstrike
+
 ## Thanks 
 
-[ZER0DAY LAB](https://zerodaylab.us/)
+ZER0DAY LAB :https://zerodaylab.us/
 
-> 注：如认为本破解补丁存在某些后门或转载删版权者，请勿使用！
->
-> 由于传播、利用此文所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，文章作者不为此承担任何责任。
->
-> XRSec 拥有对此文章的修改和解释权如欲转载或传播此文章，必须保证此文章的完整性，包括版权声明等全部内容。未经作者允许，不得任意修改或者增减此文章内容，不得以任何方式将其用于商业目的
->
 > Note: if you think that there are some backdoors in this crack patch or those who reprint or delete the copyright, please do not use it!
-> Any direct or indirect consequences and losses caused by the dissemination and use of the information provided in this article shall be borne by the user himself, and the author of the article shall not bear any responsibility for this.
+>Any direct or indirect consequences and losses caused by the dissemination and use of the information provided in this article shall be borne by the user himself, and the author of the article shall not bear any responsibility for this.
 > Xrsec has the right to modify and interpret this article. If you want to reprint or disseminate this article, you must ensure the integrity of this article, including all contents such as copyright notice. Without the permission of the author, the content of this article shall not be modified or increased or decreased arbitrarily, and it shall not be used for commercial purposes in any way
