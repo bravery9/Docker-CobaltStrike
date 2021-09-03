@@ -1,4 +1,4 @@
-# CobaltStrike Update
+# [CobaltStrike Update](https://blog.zygd.site/%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%AB%98%20%E5%88%86%E6%9E%90%E5%BB%BA%E8%AE%AE.html)
 
 ## Introduce
 
