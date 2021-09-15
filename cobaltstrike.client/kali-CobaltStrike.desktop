@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=CobaltStrike-new
+Name=CobaltStrike
 Encoding=UTF-8
 Exec=sh -c "java -javaagent:cobaltstrikecn.jar -Dfile.encoding=utf-8 -XX:ParallelGCThreads=4  -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -jar cobaltstrike.jar"
 Icon=##### cobaltstrike.client/icon.jpg 的真实路劲 #####icon.jpg

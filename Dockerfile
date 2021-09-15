@@ -11,7 +11,7 @@ COPY xac /tmp
 COPY xad /tmp
 
 RUN yum update -y && yum upgrade -y \
-    && yum install sudo langpacks-zh_CN.noarch -y \
+    && yum install sudo ncurses langpacks-zh_CN.noarch -y \
     && cat /tmp/xaa /tmp/xab /tmp/xac /tmp/xad > /tmp/jdk-16.0.2_linux-x64_bin.rpm \
     && rpm -ivh /tmp/jdk-16.0.2_linux-x64_bin.rpm \
     && rm /tmp/jdk-16.0.2_linux-x64_bin.rpm \

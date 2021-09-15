@@ -62,7 +62,7 @@ fi
 	# -Djavax.net.ssl.keyStorePassword="password" to java. This is used for setting up
 	# an SSL server socket. Also, the SHA-1 digest of the first certificate in the store
 	# is printed so users may have a chance to verify they're not being owned.
-if [ -e ./cobaltstrike.store ]; then
+if [ -e /cobaltstrike/cobaltstrike.store ]; then
 	print_info "Will use existing X509 certificate and keystore (for SSL)"
 else
 	print_info "Generating X509 certificate and keystore (for SSL)"
@@ -73,7 +73,7 @@ else
 fi
 
 # start the team server.
-# java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=50050 -Djavax.net.ssl.keyStore=./cobaltstrike.store -Djavax.net.ssl.keyStorePassword=123456 -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath ./cobaltstrike.jar server.TeamServer $*
+# java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=50050 -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=123456 -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /cobaltstrike/cobaltstrike.jar server.TeamServer $*
 
 
 # Cloud function
