@@ -13,7 +13,6 @@ echo -e "\033[1;32m \ \/ / |  _ \   ___    ___    ___  \033[0m"
 echo -e "\033[1;33m  \  /  | |_) | / __|  / _ \  / __| \033[0m"
 echo -e "\033[1;34m  /  \  |  _ <  \__ \ |  __/ | (__  \033[0m"
 echo -e "\033[1;35m /_/\_\ |_| \_\ |___/  \___|  \___| \n\033[0m"
-echo -e "\033[1;31m Thank's ZER0DAY LAB \n\033[0m"
 echo -e "\033[1;32m [ help ] \n\033[0m"
 echo $passwd
 echo 
@@ -77,11 +76,10 @@ fi
 
 
 # Cloud function
-# java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=$server_port -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /cobaltstrike/cobaltstrike.jar:. -Duser.language=en server.TeamServer $server_ip $passwd /cobaltstrike/cs.profile &
+# java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=$server_port -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /cobaltstrike/cobaltstrike.jar:. -Duser.language=en server.TeamServer $server_ip $passwd /cobaltstrike/cs.profile
 
 java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=$server_port -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /cobaltstrike/cobaltstrike.jar:. -Duser.language=en server.TeamServer $server_ip $passwd
 
 # DingTalk
 # sleep 10 
-# java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -classpath /cobaltstrike/cobaltstrike.jar aggressor.headless.Start 127.0.0.1 $server_port Dingtalk $passwd /cobaltstrike/dingding.cna &
-# /bin/bash
+# java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -classpath /cobaltstrike/cobaltstrike.jar aggressor.headless.Start 127.0.0.1 $server_port Dingtalk $passwd /cobaltstrike/dingding.cna
